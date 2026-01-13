@@ -1,5 +1,8 @@
 'use client';
 
+import { HeroSection } from '@/components/HeroSection';
+import { SkillsSection } from '@/components/SkillsSection';
+
 export default function Home() {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -11,98 +14,35 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <span className="text-xl font-mono text-emerald-400">{'>'} aleyna.dev</span>
+            <span className="text-xl font-mono text-cyan-400">{'>'} aleyna.dev</span>
             <div className="flex gap-6 text-sm font-mono">
-              <button onClick={() => scrollToSection('hero')} className="hover:text-emerald-400 transition-colors">home</button>
-              <button onClick={() => scrollToSection('abilities')} className="hover:text-emerald-400 transition-colors">abilities</button>
-              <button onClick={() => scrollToSection('weapons')} className="hover:text-emerald-400 transition-colors">weapons</button>
-              <button onClick={() => scrollToSection('files')} className="hover:text-emerald-400 transition-colors">projects</button>
-              <button onClick={() => scrollToSection('history')} className="hover:text-emerald-400 transition-colors">history</button>
-              <button onClick={() => scrollToSection('credentials')} className="hover:text-emerald-400 transition-colors">credentials</button>
-              <button onClick={() => scrollToSection('network')} className="hover:text-emerald-400 transition-colors">connect</button>
+              <button onClick={() => scrollToSection('hero')} className="hover:text-cyan-400 transition-colors">home</button>
+              <button onClick={() => scrollToSection('abilities')} className="hover:text-cyan-400 transition-colors">abilities</button>
+              <button onClick={() => scrollToSection('weapons')} className="hover:text-cyan-400 transition-colors">weapons</button>
+              <button onClick={() => scrollToSection('projects')} className="hover:text-cyan-400 transition-colors">projects</button>
+              <button onClick={() => scrollToSection('history')} className="hover:text-cyan-400 transition-colors">history</button>
+              <button onClick={() => scrollToSection('credentials')} className="hover:text-cyan-400 transition-colors">credentials</button>
+              <button onClick={() => scrollToSection('contact')} className="hover:text-cyan-400 transition-colors">connect</button>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl">
-          <div className="font-mono text-emerald-400 mb-4">{'>'} initializing...</div>
-          <h1 className="text-6xl font-bold mb-4 bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-            Aleyna Cintron
-          </h1>
-          <p className="text-2xl text-zinc-400 mb-8 font-mono">
-            Full Stack Developer & Creative Problem Solver
-          </p>
-          <p className="text-lg text-zinc-500 mb-8 max-w-2xl">
-            Crafting elegant solutions at the intersection of design and technology.
-            Specializing in building scalable applications with modern web technologies.
-          </p>
-          <div className="flex gap-4">
-            <button
-              onClick={() => scrollToSection('files')}
-              className="px-6 py-3 bg-emerald-500 text-black font-mono rounded hover:bg-emerald-400 transition-colors"
-            >
-              view_projects()
-            </button>
-            <button
-              onClick={() => scrollToSection('network')}
-              className="px-6 py-3 border border-emerald-500 text-emerald-400 font-mono rounded hover:bg-emerald-500/10 transition-colors"
-            >
-              connect()
-            </button>
-          </div>
-        </div>
-      </section>
+      <div id="hero">
+        <HeroSection />
+      </div>
 
-      {/* Ability Loadout Section */}
-      <section id="abilities" className="min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="max-w-6xl w-full">
-          <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-emerald-400">{'>'}</span> ability_loadout
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: 'Frontend Development', level: 95, skills: ['React', 'Next.js', 'TypeScript'] },
-              { name: 'Backend Development', level: 90, skills: ['Node.js', 'Python', 'APIs'] },
-              { name: 'UI/UX Design', level: 85, skills: ['Figma', 'Responsive Design'] },
-              { name: 'Database Management', level: 80, skills: ['PostgreSQL', 'MongoDB'] },
-              { name: 'Cloud Services', level: 75, skills: ['AWS', 'Vercel', 'Docker'] },
-              { name: 'Problem Solving', level: 98, skills: ['Algorithms', 'System Design'] },
-            ].map((ability) => (
-              <div key={ability.name} className="border border-zinc-800 rounded-lg p-6 hover:border-emerald-500/50 transition-colors">
-                <h3 className="text-lg font-mono text-emerald-400 mb-2">{ability.name}</h3>
-                <div className="mb-3">
-                  <div className="flex justify-between text-xs text-zinc-500 mb-1">
-                    <span>proficiency</span>
-                    <span>{ability.level}%</span>
-                  </div>
-                  <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-linear-to-r from-emerald-500 to-cyan-500"
-                      style={{ width: `${ability.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {ability.skills.map(skill => (
-                    <span key={skill} className="text-xs px-2 py-1 bg-zinc-800 rounded text-zinc-400">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Skills Section */}
+      <div id="abilities">
+        <SkillsSection />
+      </div>
 
       {/* Weapon Cache Section */}
       <section id="weapons" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
         <div className="max-w-6xl w-full">
           <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-emerald-400">{'>'}</span> weapon_cache
+            <span className="text-cyan-400">{'>'}</span> weapon_cache
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -116,7 +56,7 @@ export default function Home() {
                 className="border border-zinc-800 rounded-lg p-4 text-center hover:border-emerald-500 hover:bg-emerald-500/5 transition-all cursor-pointer group"
               >
                 <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">⚡</div>
-                <div className="font-mono text-sm text-zinc-400 group-hover:text-emerald-400 transition-colors">
+                <div className="font-mono text-sm text-zinc-400 group-hover:text-cyan-400 transition-colors">
                   {weapon}
                 </div>
               </div>
@@ -126,10 +66,10 @@ export default function Home() {
       </section>
 
       {/* File System Section */}
-      <section id="files" className="min-h-screen flex items-center justify-center px-6 py-20">
+      <section id="projects" className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-6xl w-full">
           <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-emerald-400">{'>'}</span> file_system/projects
+            <span className="text-cyan-400">{'>'}</span> file_system/projects
           </h2>
           <div className="space-y-6">
             {[
@@ -157,12 +97,12 @@ export default function Home() {
                 className="border border-zinc-800 rounded-lg p-6 hover:border-emerald-500/50 transition-all group"
               >
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-mono text-emerald-400 group-hover:text-emerald-300">
+                  <h3 className="text-xl font-mono text-cyan-400 group-hover:text-emerald-300">
                     📁 {project.name}
                   </h3>
                   <a
                     href={project.link}
-                    className="text-sm font-mono text-zinc-500 hover:text-emerald-400 transition-colors"
+                    className="text-sm font-mono text-zinc-500 hover:text-cyan-400 transition-colors"
                   >
                     view_details {'->'}
                   </a>
@@ -170,7 +110,7 @@ export default function Home() {
                 <p className="text-zinc-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map(tech => (
-                    <span key={tech} className="text-xs px-3 py-1 bg-zinc-900 border border-zinc-800 rounded font-mono text-emerald-400">
+                    <span key={tech} className="text-xs px-3 py-1 bg-zinc-900 border border-zinc-800 rounded font-mono text-cyan-400">
                       {tech}
                     </span>
                   ))}
@@ -185,7 +125,7 @@ export default function Home() {
       <section id="history" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
         <div className="max-w-4xl w-full">
           <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-emerald-400">{'>'}</span> command_history
+            <span className="text-cyan-400">{'>'}</span> command_history
           </h2>
           <div className="space-y-8">
             {[
@@ -209,13 +149,13 @@ export default function Home() {
               },
             ].map((exp) => (
               <div key={exp.command} className="flex gap-6 group">
-                <div className="text-emerald-400 font-mono text-sm whitespace-nowrap pt-1">
+                <div className="text-cyan-400 font-mono text-sm whitespace-nowrap pt-1">
                   {exp.date}
                 </div>
                 <div className="flex-1">
                   <div className="font-mono text-lg mb-1">
                     <span className="text-zinc-600">{'$ '}</span>
-                    <span className="text-emerald-400">{exp.command}</span>
+                    <span className="text-cyan-400">{exp.command}</span>
                     <span className="text-zinc-600"> --company=</span>
                     <span className="text-cyan-400">{exp.company}</span>
                   </div>
@@ -231,19 +171,19 @@ export default function Home() {
       <section id="credentials" className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-4xl w-full">
           <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-emerald-400">{'>'}</span> credentials.json
+            <span className="text-cyan-400">{'>'}</span> credentials.json
           </h2>
           <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-8 font-mono text-sm">
             <pre className="text-zinc-400">
               <span className="text-cyan-400">{'{'}</span>{'\n'}
-              <span>  </span><span className="text-emerald-400">"education"</span>: <span className="text-cyan-400">{'['}</span>{'\n'}
+              <span>  </span><span className="text-cyan-400">"education"</span>: <span className="text-cyan-400">{'['}</span>{'\n'}
               <span>    {'{'}</span>{'\n'}
-              <span>      </span><span className="text-emerald-400">"degree"</span>: <span className="text-yellow-400">"Bachelor of Science in Computer Science"</span>,{'\n'}
-              <span>      </span><span className="text-emerald-400">"institution"</span>: <span className="text-yellow-400">"University of Technology"</span>,{'\n'}
-              <span>      </span><span className="text-emerald-400">"year"</span>: <span className="text-purple-400">2020</span>{'\n'}
+              <span>      </span><span className="text-cyan-400">"degree"</span>: <span className="text-yellow-400">"Bachelor of Science in Computer Science"</span>,{'\n'}
+              <span>      </span><span className="text-cyan-400">"institution"</span>: <span className="text-yellow-400">"University of Technology"</span>,{'\n'}
+              <span>      </span><span className="text-cyan-400">"year"</span>: <span className="text-purple-400">2020</span>{'\n'}
               <span>    {'}'}</span>{'\n'}
               <span>  </span><span className="text-cyan-400">{']'}</span>,{'\n'}
-              <span>  </span><span className="text-emerald-400">"certifications"</span>: <span className="text-cyan-400">{'['}</span>{'\n'}
+              <span>  </span><span className="text-cyan-400">"certifications"</span>: <span className="text-cyan-400">{'['}</span>{'\n'}
               <span>    </span><span className="text-yellow-400">"AWS Certified Developer"</span>,{'\n'}
               <span>    </span><span className="text-yellow-400">"React Advanced Patterns"</span>,{'\n'}
               <span>    </span><span className="text-yellow-400">"Full Stack JavaScript Developer"</span>{'\n'}
@@ -255,14 +195,14 @@ export default function Home() {
       </section>
 
       {/* Network Connection Section */}
-      <section id="network" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
+      <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
         <div className="max-w-4xl w-full">
           <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-emerald-400">{'>'}</span> network_connection
+            <span className="text-cyan-400">{'>'}</span> network_connection
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
-              <h3 className="text-xl font-mono text-emerald-400 mb-4">establish_connection()</h3>
+              <h3 className="text-xl font-mono text-cyan-400 mb-4">establish_connection()</h3>
               <div className="space-y-4">
                 {[
                   { platform: 'GitHub', handle: 'github.com/aleyna', icon: '⚙️' },
@@ -278,14 +218,14 @@ export default function Home() {
                     <span className="text-2xl">{contact.icon}</span>
                     <div>
                       <div className="font-mono text-sm text-zinc-500">{contact.platform}</div>
-                      <div className="text-emerald-400 group-hover:text-emerald-300">{contact.handle}</div>
+                      <div className="text-cyan-400 group-hover:text-emerald-300">{contact.handle}</div>
                     </div>
                   </a>
                 ))}
               </div>
             </div>
             <div className="border border-zinc-800 rounded-lg p-6">
-              <h3 className="text-xl font-mono text-emerald-400 mb-4">send_message()</h3>
+              <h3 className="text-xl font-mono text-cyan-400 mb-4">send_message()</h3>
               <form className="space-y-4">
                 <input
                   type="text"
@@ -318,7 +258,7 @@ export default function Home() {
       <footer className="border-t border-zinc-800 py-8 px-6">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="font-mono text-sm text-zinc-600">
-            <span className="text-emerald-400">{'>'}</span> aleyna.dev © 2026
+            <span className="text-cyan-400">{'>'}</span> aleyna.dev © 2026
           </div>
           <div className="font-mono text-sm text-zinc-600">
             crafted with <span className="text-red-500">♥</span> and code
