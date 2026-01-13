@@ -1,65 +1,330 @@
-import Image from "next/image";
+'use client';
 
 export default function Home() {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="bg-black text-zinc-100">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-zinc-800">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <span className="text-xl font-mono text-emerald-400">{'>'} aleyna.dev</span>
+            <div className="flex gap-6 text-sm font-mono">
+              <button onClick={() => scrollToSection('hero')} className="hover:text-emerald-400 transition-colors">home</button>
+              <button onClick={() => scrollToSection('abilities')} className="hover:text-emerald-400 transition-colors">abilities</button>
+              <button onClick={() => scrollToSection('weapons')} className="hover:text-emerald-400 transition-colors">weapons</button>
+              <button onClick={() => scrollToSection('files')} className="hover:text-emerald-400 transition-colors">projects</button>
+              <button onClick={() => scrollToSection('history')} className="hover:text-emerald-400 transition-colors">history</button>
+              <button onClick={() => scrollToSection('credentials')} className="hover:text-emerald-400 transition-colors">credentials</button>
+              <button onClick={() => scrollToSection('network')} className="hover:text-emerald-400 transition-colors">connect</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="hero" className="min-h-screen flex items-center justify-center px-6">
+        <div className="max-w-4xl">
+          <div className="font-mono text-emerald-400 mb-4">{'>'} initializing...</div>
+          <h1 className="text-6xl font-bold mb-4 bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            Aleyna Cintron
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-2xl text-zinc-400 mb-8 font-mono">
+            Full Stack Developer & Creative Problem Solver
           </p>
+          <p className="text-lg text-zinc-500 mb-8 max-w-2xl">
+            Crafting elegant solutions at the intersection of design and technology.
+            Specializing in building scalable applications with modern web technologies.
+          </p>
+          <div className="flex gap-4">
+            <button
+              onClick={() => scrollToSection('files')}
+              className="px-6 py-3 bg-emerald-500 text-black font-mono rounded hover:bg-emerald-400 transition-colors"
+            >
+              view_projects()
+            </button>
+            <button
+              onClick={() => scrollToSection('network')}
+              className="px-6 py-3 border border-emerald-500 text-emerald-400 font-mono rounded hover:bg-emerald-500/10 transition-colors"
+            >
+              connect()
+            </button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Ability Loadout Section */}
+      <section id="abilities" className="min-h-screen flex items-center justify-center px-6 py-20">
+        <div className="max-w-6xl w-full">
+          <h2 className="text-4xl font-bold mb-12 font-mono">
+            <span className="text-emerald-400">{'>'}</span> ability_loadout
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: 'Frontend Development', level: 95, skills: ['React', 'Next.js', 'TypeScript'] },
+              { name: 'Backend Development', level: 90, skills: ['Node.js', 'Python', 'APIs'] },
+              { name: 'UI/UX Design', level: 85, skills: ['Figma', 'Responsive Design'] },
+              { name: 'Database Management', level: 80, skills: ['PostgreSQL', 'MongoDB'] },
+              { name: 'Cloud Services', level: 75, skills: ['AWS', 'Vercel', 'Docker'] },
+              { name: 'Problem Solving', level: 98, skills: ['Algorithms', 'System Design'] },
+            ].map((ability) => (
+              <div key={ability.name} className="border border-zinc-800 rounded-lg p-6 hover:border-emerald-500/50 transition-colors">
+                <h3 className="text-lg font-mono text-emerald-400 mb-2">{ability.name}</h3>
+                <div className="mb-3">
+                  <div className="flex justify-between text-xs text-zinc-500 mb-1">
+                    <span>proficiency</span>
+                    <span>{ability.level}%</span>
+                  </div>
+                  <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-linear-to-r from-emerald-500 to-cyan-500"
+                      style={{ width: `${ability.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {ability.skills.map(skill => (
+                    <span key={skill} className="text-xs px-2 py-1 bg-zinc-800 rounded text-zinc-400">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Weapon Cache Section */}
+      <section id="weapons" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
+        <div className="max-w-6xl w-full">
+          <h2 className="text-4xl font-bold mb-12 font-mono">
+            <span className="text-emerald-400">{'>'}</span> weapon_cache
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              'JavaScript', 'TypeScript', 'React', 'Next.js',
+              'Node.js', 'Python', 'Tailwind CSS', 'PostgreSQL',
+              'MongoDB', 'Git', 'Docker', 'AWS',
+              'Figma', 'REST APIs', 'GraphQL', 'CI/CD'
+            ].map((weapon) => (
+              <div
+                key={weapon}
+                className="border border-zinc-800 rounded-lg p-4 text-center hover:border-emerald-500 hover:bg-emerald-500/5 transition-all cursor-pointer group"
+              >
+                <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">⚡</div>
+                <div className="font-mono text-sm text-zinc-400 group-hover:text-emerald-400 transition-colors">
+                  {weapon}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* File System Section */}
+      <section id="files" className="min-h-screen flex items-center justify-center px-6 py-20">
+        <div className="max-w-6xl w-full">
+          <h2 className="text-4xl font-bold mb-12 font-mono">
+            <span className="text-emerald-400">{'>'}</span> file_system/projects
+          </h2>
+          <div className="space-y-6">
+            {[
+              {
+                name: 'E-Commerce Platform',
+                description: 'Full-stack e-commerce solution with real-time inventory management',
+                tech: ['Next.js', 'PostgreSQL', 'Stripe'],
+                link: '#'
+              },
+              {
+                name: 'AI Task Manager',
+                description: 'Smart task management app with AI-powered prioritization',
+                tech: ['React', 'Node.js', 'OpenAI API'],
+                link: '#'
+              },
+              {
+                name: 'Design System Library',
+                description: 'Comprehensive component library with accessibility features',
+                tech: ['TypeScript', 'Storybook', 'Tailwind'],
+                link: '#'
+              },
+            ].map((project) => (
+              <div
+                key={project.name}
+                className="border border-zinc-800 rounded-lg p-6 hover:border-emerald-500/50 transition-all group"
+              >
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-mono text-emerald-400 group-hover:text-emerald-300">
+                    📁 {project.name}
+                  </h3>
+                  <a
+                    href={project.link}
+                    className="text-sm font-mono text-zinc-500 hover:text-emerald-400 transition-colors"
+                  >
+                    view_details {'->'}
+                  </a>
+                </div>
+                <p className="text-zinc-400 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map(tech => (
+                    <span key={tech} className="text-xs px-3 py-1 bg-zinc-900 border border-zinc-800 rounded font-mono text-emerald-400">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Command History Section */}
+      <section id="history" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
+        <div className="max-w-4xl w-full">
+          <h2 className="text-4xl font-bold mb-12 font-mono">
+            <span className="text-emerald-400">{'>'}</span> command_history
+          </h2>
+          <div className="space-y-8">
+            {[
+              {
+                date: '2023 - Present',
+                command: 'senior_developer',
+                company: 'Tech Innovations Inc.',
+                description: 'Leading frontend development team, architecting scalable solutions'
+              },
+              {
+                date: '2021 - 2023',
+                command: 'full_stack_developer',
+                company: 'Digital Solutions Co.',
+                description: 'Built and maintained multiple client projects using modern stack'
+              },
+              {
+                date: '2020 - 2021',
+                command: 'junior_developer',
+                company: 'Startup Ventures',
+                description: 'Contributed to core product development and feature implementation'
+              },
+            ].map((exp) => (
+              <div key={exp.command} className="flex gap-6 group">
+                <div className="text-emerald-400 font-mono text-sm whitespace-nowrap pt-1">
+                  {exp.date}
+                </div>
+                <div className="flex-1">
+                  <div className="font-mono text-lg mb-1">
+                    <span className="text-zinc-600">{'$ '}</span>
+                    <span className="text-emerald-400">{exp.command}</span>
+                    <span className="text-zinc-600"> --company=</span>
+                    <span className="text-cyan-400">{exp.company}</span>
+                  </div>
+                  <p className="text-zinc-400 text-sm">{exp.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials Section */}
+      <section id="credentials" className="min-h-screen flex items-center justify-center px-6 py-20">
+        <div className="max-w-4xl w-full">
+          <h2 className="text-4xl font-bold mb-12 font-mono">
+            <span className="text-emerald-400">{'>'}</span> credentials.json
+          </h2>
+          <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-8 font-mono text-sm">
+            <pre className="text-zinc-400">
+              <span className="text-cyan-400">{'{'}</span>{'\n'}
+              <span>  </span><span className="text-emerald-400">"education"</span>: <span className="text-cyan-400">{'['}</span>{'\n'}
+              <span>    {'{'}</span>{'\n'}
+              <span>      </span><span className="text-emerald-400">"degree"</span>: <span className="text-yellow-400">"Bachelor of Science in Computer Science"</span>,{'\n'}
+              <span>      </span><span className="text-emerald-400">"institution"</span>: <span className="text-yellow-400">"University of Technology"</span>,{'\n'}
+              <span>      </span><span className="text-emerald-400">"year"</span>: <span className="text-purple-400">2020</span>{'\n'}
+              <span>    {'}'}</span>{'\n'}
+              <span>  </span><span className="text-cyan-400">{']'}</span>,{'\n'}
+              <span>  </span><span className="text-emerald-400">"certifications"</span>: <span className="text-cyan-400">{'['}</span>{'\n'}
+              <span>    </span><span className="text-yellow-400">"AWS Certified Developer"</span>,{'\n'}
+              <span>    </span><span className="text-yellow-400">"React Advanced Patterns"</span>,{'\n'}
+              <span>    </span><span className="text-yellow-400">"Full Stack JavaScript Developer"</span>{'\n'}
+              <span>  </span><span className="text-cyan-400">{']'}</span>{'\n'}
+              <span className="text-cyan-400">{'}'}</span>
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      {/* Network Connection Section */}
+      <section id="network" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
+        <div className="max-w-4xl w-full">
+          <h2 className="text-4xl font-bold mb-12 font-mono">
+            <span className="text-emerald-400">{'>'}</span> network_connection
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <h3 className="text-xl font-mono text-emerald-400 mb-4">establish_connection()</h3>
+              <div className="space-y-4">
+                {[
+                  { platform: 'GitHub', handle: 'github.com/aleyna', icon: '⚙️' },
+                  { platform: 'LinkedIn', handle: 'linkedin.com/in/aleyna', icon: '💼' },
+                  { platform: 'Email', handle: 'aleyna@example.com', icon: '📧' },
+                  { platform: 'Twitter', handle: '@aleyna_dev', icon: '🐦' },
+                ].map((contact) => (
+                  <a
+                    key={contact.platform}
+                    href="#"
+                    className="flex items-center gap-4 p-4 border border-zinc-800 rounded-lg hover:border-emerald-500 hover:bg-emerald-500/5 transition-all group"
+                  >
+                    <span className="text-2xl">{contact.icon}</span>
+                    <div>
+                      <div className="font-mono text-sm text-zinc-500">{contact.platform}</div>
+                      <div className="text-emerald-400 group-hover:text-emerald-300">{contact.handle}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="border border-zinc-800 rounded-lg p-6">
+              <h3 className="text-xl font-mono text-emerald-400 mb-4">send_message()</h3>
+              <form className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="your_name"
+                  className="w-full px-4 py-3 bg-black border border-zinc-800 rounded font-mono text-sm focus:border-emerald-500 focus:outline-none"
+                />
+                <input
+                  type="email"
+                  placeholder="your_email"
+                  className="w-full px-4 py-3 bg-black border border-zinc-800 rounded font-mono text-sm focus:border-emerald-500 focus:outline-none"
+                />
+                <textarea
+                  placeholder="your_message"
+                  rows={4}
+                  className="w-full px-4 py-3 bg-black border border-zinc-800 rounded font-mono text-sm focus:border-emerald-500 focus:outline-none resize-none"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-emerald-500 text-black font-mono rounded hover:bg-emerald-400 transition-colors"
+                >
+                  transmit()
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-zinc-800 py-8 px-6">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <div className="font-mono text-sm text-zinc-600">
+            <span className="text-emerald-400">{'>'}</span> aleyna.dev © 2026
+          </div>
+          <div className="font-mono text-sm text-zinc-600">
+            crafted with <span className="text-red-500">♥</span> and code
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
