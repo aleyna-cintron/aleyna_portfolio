@@ -1,39 +1,45 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Code, Database, Layers, Target } from "lucide-react";
+import { GitBranch, TestTube, Shield, Target, Rocket, Layers, Activity } from "lucide-react";
 
 export function PrimarySkills() {
-  const skillCategories = [
+  const practiceCategories = [
     {
-      name: "Languages / OOP",
-      icon: Code,
-      color: "#00ffff",
-      skills: ["JavaScript", "TypeScript", "Python", "SQL", "NoSQL", "HTML", "CSS", "OOP"]
-    },
-    {
-      name: "Web / Frameworks",
-      icon: Layers,
-      color: "#ff00ff",
-      skills: ["React.js", "Next.js", "Node.js", "Express.js", "Django", "Bootstrap", "Tailwind CSS"]
-    },
-    {
-      name: "State Management",
-      icon: Database,
-      color: "#00ff00",
-      skills: ["Redux", "Context API", "Zustand", "localStorage"]
-    },
-    {
-      name: "Testing / Tools",
+      name: "Development Methodology",
       icon: Target,
-      color: "#ffff00",
-      skills: ["Git", "Postman", "Jest", "Selenium", "JWT", "OAuth", "Stripe"]
+      color: "#00ffff",
+      practices: ["Agile/Scrum", "Sprint Planning", "Code Reviews", "Pair Programming", "Stand-ups", "Retrospectives"]
     },
     {
-      name: "Databases",
-      icon: Database,
+      name: "Code Quality",
+      icon: TestTube,
+      color: "#ff00ff",
+      practices: ["Unit Testing", "Integration Testing", "Test-Driven Development", "Code Documentation", "ESLint/Prettier", "Type Safety"]
+    },
+    {
+      name: "Version Control",
+      icon: GitBranch,
+      color: "#00ff00",
+      practices: ["Git Workflow", "Feature Branches", "Pull Requests", "Merge Strategies", "Commit Standards", "Git Hooks"]
+    },
+    {
+      name: "CI/CD & DevOps",
+      icon: Rocket,
+      color: "#ffff00",
+      practices: ["Continuous Integration", "Automated Deployment", "Environment Management", "Docker Containers", "AWS Services", "Monitoring"]
+    },
+    {
+      name: "Architecture & Design",
+      icon: Layers,
       color: "#ff6600",
-      skills: ["MySQL", "PostgreSQL", "MongoDB", "AWS DynamoDB"]
+      practices: ["RESTful API Design", "Component Architecture", "State Management", "Database Schema Design", "Responsive Design", "Performance Optimization"]
+    },
+    {
+      name: "Security & Best Practices",
+      icon: Shield,
+      color: "#ff00aa",
+      practices: ["Authentication/Authorization", "Data Validation", "SQL Injection Prevention", "XSS Protection", "CORS Configuration", "Environment Variables"]
     }
   ];
 
@@ -81,17 +87,17 @@ export function PrimarySkills() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <Target className="w-6 h-6 text-purple-400" />
+            <Activity className="w-6 h-6 text-purple-400" />
             <h2 className="text-4xl md:text-5xl font-mono font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              TECH_STACK
+              DEVELOPMENT_PRACTICES
             </h2>
           </div>
-          <p className="text-gray-400 font-mono text-sm">// Professional toolset and technologies...</p>
+          <p className="text-gray-400 font-mono text-sm">// Professional methodologies and workflows...</p>
         </motion.div>
 
-        {/* Skills Grid */}
+        {/* Practices Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, idx) => (
+          {practiceCategories.map((category, idx) => (
             <motion.div
               key={category.name}
               initial={{ opacity: 0, y: 30 }}
@@ -144,15 +150,15 @@ export function PrimarySkills() {
                     </div>
                   </div>
 
-                  {/* Skills - THE MAIN FOCUS */}
+                  {/* Practices */}
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIdx) => (
+                    {category.practices.map((practice, practiceIdx) => (
                       <motion.span
-                        key={skill}
+                        key={practice}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 + skillIdx * 0.05 }}
+                        transition={{ delay: idx * 0.1 + practiceIdx * 0.05 }}
                         className="px-3 py-2 text-sm font-mono border rounded hover:scale-105 transition-transform duration-200"
                         style={{
                           borderColor: `${category.color}60`,
@@ -160,7 +166,7 @@ export function PrimarySkills() {
                           color: category.color
                         }}
                       >
-                        {skill}
+                        {practice}
                       </motion.span>
                     ))}
                   </div>
@@ -186,20 +192,20 @@ export function PrimarySkills() {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" style={{ boxShadow: '0 0 10px #00ff00' }} />
-              <span className="text-green-400 font-mono font-bold">ALL SYSTEMS OPERATIONAL</span>
+              <span className="text-green-400 font-mono font-bold">WORKFLOW OPTIMIZED</span>
             </div>
             <div className="flex gap-6 text-sm font-mono">
               <div>
-                <span className="text-gray-500">Frontend:</span>
-                <span className="text-cyan-400 ml-2">READY</span>
+                <span className="text-gray-500">Quality:</span>
+                <span className="text-cyan-400 ml-2">HIGH</span>
               </div>
               <div>
-                <span className="text-gray-500">Backend:</span>
-                <span className="text-pink-400 ml-2">READY</span>
+                <span className="text-gray-500">Efficiency:</span>
+                <span className="text-pink-400 ml-2">OPTIMIZED</span>
               </div>
               <div>
-                <span className="text-gray-500">DevOps:</span>
-                <span className="text-green-400 ml-2">READY</span>
+                <span className="text-gray-500">Collaboration:</span>
+                <span className="text-green-400 ml-2">ACTIVE</span>
               </div>
             </div>
           </div>

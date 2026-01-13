@@ -2,6 +2,10 @@
 
 import { HeroSection } from '@/components/HeroSection';
 import { SkillsSection } from '@/components/SkillsSection';
+import { PrimarySkills } from '@/components/PrimarySkills';
+import { ProjectsSection } from '@/components/ProjectsSection';
+import { ExperienceSection } from '@/components/ExperienceSection';
+import { EducationSection } from '@/components/EducationSection';
 
 export default function Home() {
   const scrollToSection = (id: string) => {
@@ -38,6 +42,9 @@ export default function Home() {
         <SkillsSection />
       </div>
 
+      {/* Development Practices Section */}
+      <PrimarySkills />
+
       {/* Weapon Cache Section */}
       <section id="weapons" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
         <div className="max-w-6xl w-full">
@@ -65,134 +72,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* File System Section */}
-      <section id="projects" className="min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="max-w-6xl w-full">
-          <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-cyan-400">{'>'}</span> file_system/projects
-          </h2>
-          <div className="space-y-6">
-            {[
-              {
-                name: 'E-Commerce Platform',
-                description: 'Full-stack e-commerce solution with real-time inventory management',
-                tech: ['Next.js', 'PostgreSQL', 'Stripe'],
-                link: '#'
-              },
-              {
-                name: 'AI Task Manager',
-                description: 'Smart task management app with AI-powered prioritization',
-                tech: ['React', 'Node.js', 'OpenAI API'],
-                link: '#'
-              },
-              {
-                name: 'Design System Library',
-                description: 'Comprehensive component library with accessibility features',
-                tech: ['TypeScript', 'Storybook', 'Tailwind'],
-                link: '#'
-              },
-            ].map((project) => (
-              <div
-                key={project.name}
-                className="border border-zinc-800 rounded-lg p-6 hover:border-emerald-500/50 transition-all group"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-mono text-cyan-400 group-hover:text-emerald-300">
-                    📁 {project.name}
-                  </h3>
-                  <a
-                    href={project.link}
-                    className="text-sm font-mono text-zinc-500 hover:text-cyan-400 transition-colors"
-                  >
-                    view_details {'->'}
-                  </a>
-                </div>
-                <p className="text-zinc-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map(tech => (
-                    <span key={tech} className="text-xs px-3 py-1 bg-zinc-900 border border-zinc-800 rounded font-mono text-cyan-400">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Projects Section */}
+      <ProjectsSection />
 
-      {/* Command History Section */}
-      <section id="history" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
-        <div className="max-w-4xl w-full">
-          <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-cyan-400">{'>'}</span> command_history
-          </h2>
-          <div className="space-y-8">
-            {[
-              {
-                date: '2023 - Present',
-                command: 'senior_developer',
-                company: 'Tech Innovations Inc.',
-                description: 'Leading frontend development team, architecting scalable solutions'
-              },
-              {
-                date: '2021 - 2023',
-                command: 'full_stack_developer',
-                company: 'Digital Solutions Co.',
-                description: 'Built and maintained multiple client projects using modern stack'
-              },
-              {
-                date: '2020 - 2021',
-                command: 'junior_developer',
-                company: 'Startup Ventures',
-                description: 'Contributed to core product development and feature implementation'
-              },
-            ].map((exp) => (
-              <div key={exp.command} className="flex gap-6 group">
-                <div className="text-cyan-400 font-mono text-sm whitespace-nowrap pt-1">
-                  {exp.date}
-                </div>
-                <div className="flex-1">
-                  <div className="font-mono text-lg mb-1">
-                    <span className="text-zinc-600">{'$ '}</span>
-                    <span className="text-cyan-400">{exp.command}</span>
-                    <span className="text-zinc-600"> --company=</span>
-                    <span className="text-cyan-400">{exp.company}</span>
-                  </div>
-                  <p className="text-zinc-400 text-sm">{exp.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Experience Section */}
+      <div id="history">
+        <ExperienceSection />
+      </div>
 
-      {/* Credentials Section */}
-      <section id="credentials" className="min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="max-w-4xl w-full">
-          <h2 className="text-4xl font-bold mb-12 font-mono">
-            <span className="text-cyan-400">{'>'}</span> credentials.json
-          </h2>
-          <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-8 font-mono text-sm">
-            <pre className="text-zinc-400">
-              <span className="text-cyan-400">{'{'}</span>{'\n'}
-              <span>  </span><span className="text-cyan-400">"education"</span>: <span className="text-cyan-400">{'['}</span>{'\n'}
-              <span>    {'{'}</span>{'\n'}
-              <span>      </span><span className="text-cyan-400">"degree"</span>: <span className="text-yellow-400">"Bachelor of Science in Computer Science"</span>,{'\n'}
-              <span>      </span><span className="text-cyan-400">"institution"</span>: <span className="text-yellow-400">"University of Technology"</span>,{'\n'}
-              <span>      </span><span className="text-cyan-400">"year"</span>: <span className="text-purple-400">2020</span>{'\n'}
-              <span>    {'}'}</span>{'\n'}
-              <span>  </span><span className="text-cyan-400">{']'}</span>,{'\n'}
-              <span>  </span><span className="text-cyan-400">"certifications"</span>: <span className="text-cyan-400">{'['}</span>{'\n'}
-              <span>    </span><span className="text-yellow-400">"AWS Certified Developer"</span>,{'\n'}
-              <span>    </span><span className="text-yellow-400">"React Advanced Patterns"</span>,{'\n'}
-              <span>    </span><span className="text-yellow-400">"Full Stack JavaScript Developer"</span>{'\n'}
-              <span>  </span><span className="text-cyan-400">{']'}</span>{'\n'}
-              <span className="text-cyan-400">{'}'}</span>
-            </pre>
-          </div>
-        </div>
-      </section>
+      {/* Education Section */}
+      <div id="credentials">
+        <EducationSection />
+      </div>
 
       {/* Network Connection Section */}
       <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20 bg-zinc-950">
