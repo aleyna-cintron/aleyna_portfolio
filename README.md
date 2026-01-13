@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aleyna Cintron Portfolio
 
-## Getting Started
+A cyberpunk-themed developer portfolio showcasing my work as a Full Stack Software Engineer. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4, featuring immersive animations and a gaming-inspired aesthetic.
 
-First, run the development server:
+![Portfolio Preview](https://img.shields.io/badge/Next.js-16.1.1-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.2.3-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38B2AC?style=for-the-badge&logo=tailwind-css)
 
+## 🎮 Features
+
+- **Cyberpunk Gaming Theme**: Immersive terminal-inspired UI with neon accents, scan lines, and RPG-style elements
+- **Interactive Animations**: Smooth transitions and hover effects powered by Framer Motion
+- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- **Performance Optimized**: Built with Next.js App Router for optimal loading speeds
+- **Accessible Design**: Semantic HTML and keyboard navigation support
+
+## 🚀 Live Demo
+
+[View Live Portfolio](#) <!-- Add your deployment URL here -->
+
+## 📋 Sections
+
+- **Hero Section**: Terminal-style introduction with typewriter effect and RPG stats
+- **Skills**: Technical proficiencies displayed as gaming ability cards
+- **Primary Practices**: Development methodologies and best practices
+- **Projects**: Showcase of freelance, contract, and academic work with live demos
+- **Experience**: Professional work history in log file format
+- **Education**: Academic credentials with graduation photo
+- **Contact**: Multiple communication channels with animated network visualization
+
+## 🛠️ Tech Stack
+
+### Core Technologies
+- **Framework**: Next.js 16.1.1
+- **UI Library**: React 19.2.3
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion 12.26.1
+- **Icons**: Lucide React 0.562.0
+
+### Development Tools
+- **Package Manager**: npm
+- **Linter**: ESLint 9
+- **Type Checking**: TypeScript strict mode
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/aleyna-cintron/aleyna_portfolio.git
+cd aleyna_portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## 🏗️ Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+aleyna_portfolio/
+├── app/
+│   ├── globals.css          # Global styles and Tailwind configuration
+│   ├── icon.svg             # Custom favicon
+│   ├── layout.tsx           # Root layout with metadata
+│   └── page.tsx             # Main page with all sections
+├── components/
+│   ├── ContactSection.tsx   # Contact information and links
+│   ├── EducationSection.tsx # Academic credentials
+│   ├── ExperienceSection.tsx # Work history
+│   ├── HeroSection.tsx      # Landing section
+│   ├── PrimarySkills.tsx    # Development practices
+│   ├── ProjectsSection.tsx  # Project showcase
+│   └── SkillsSection.tsx    # Technical skills
+├── public/
+│   └── graduation.jpg       # Graduation photo
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
-## Deploy on Vercel
+## 🎨 Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Colors
+The portfolio uses a cyberpunk color scheme defined in Tailwind CSS:
+- **Cyan** (#00ffff): Primary accent
+- **Purple** (#8b5cf6): Secondary accent
+- **Pink** (#ff00ff): Tertiary accent
+- **Green** (#00ff00): Success states
+- **Amber** (#fbbf24): Highlight elements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Content
+Update the following files to customize content:
+- `components/HeroSection.tsx`: Name, role, stats, and introduction
+- `components/ProjectsSection.tsx`: Project details and links
+- `components/ExperienceSection.tsx`: Work history
+- `components/EducationSection.tsx`: Academic information
+- `components/ContactSection.tsx`: Contact details
+
+### Images
+- Replace `public/graduation.jpg` with your graduation photo
+- Update `app/icon.svg` for custom favicon
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contact
+
+- **Email**: aleynatcintron@gmail.com
+- **LinkedIn**: [linkedin.com/in/aleynacintron](https://www.linkedin.com/in/aleynacintron/)
+- **GitHub**: [github.com/aleyna-cintron](https://github.com/aleyna-cintron)
+
+---
+
+**© 2026 Aleyna Cintron** | Powered by React + Tailwind + Cybernetic Energy ⚡
+
+*"Turning ideas into interactive experiences"*
