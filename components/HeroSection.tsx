@@ -177,10 +177,11 @@ export function HeroSection() {
                   <ChevronRight className="w-4 h-4 text-amber-400" />
                   <span className="text-gray-500">STATS:</span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pl-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pl-6">
                   <RPGStat label="LOCATION" value="Boston/Tewksbury" max="" color="#00ffff" icon="📍" delay={1.6} />
                   <RPGStat label="CORE STACK" value="MERN + NEXT.JS" max="" color="#ff00ff" icon="⚛️" delay={1.7} />
-                  <RPGStat label="EDUCATION" value="B.S. DEGREE" max="" color="#00ff00" icon="🎓" delay={1.8} />
+                  <RPGStat label="EDUCATION" value="B.S. DEGREE" max="" color="#00ff00" icon="🎓" delay={1.8} scrollTo="credentials" />
+                  <RPGStat label="GITHUB" value="aleyna-cintron" max="" color="#fbbf24" icon="💻" delay={1.9} href="https://github.com/aleyna-cintron" />
                 </div>
               </motion.div>
 
@@ -306,17 +307,13 @@ interface RPGStatProps {
   color: string;
   icon: string;
   delay: number;
+  href?: string;
+  scrollTo?: string;
 }
 
-function RPGStat({ label, value, max, color, icon, delay }: RPGStatProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scaleY: 0 }}
-      animate={{ opacity: 1, scaleY: 1 }}
-      transition={{ delay, duration: 0.3 }}
-      className="relative p-3 bg-black/50 border rounded group hover:border-opacity-100 transition-all duration-300"
-      style={{ borderColor: `${color}40` }}
-    >
+function RPGStat({ label, value, max, color, icon, delay, href, scrollTo }: RPGStatProps) {
+  const content = (
+    <>
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded"
         style={{
           background: `radial-gradient(circle at center, ${color}15, transparent)`,
@@ -332,6 +329,50 @@ function RPGStat({ label, value, max, color, icon, delay }: RPGStatProps) {
           {value}{max && ` / ${max}`}
         </div>
       </div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <motion.a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, scaleY: 0 }}
+        animate={{ opacity: 1, scaleY: 1 }}
+        transition={{ delay, duration: 0.3 }}
+        className="relative p-3 bg-black/50 border rounded group hover:border-opacity-100 transition-all duration-300 cursor-pointer hover:scale-105 block"
+        style={{ borderColor: `${color}40` }}
+      >
+        {content}
+      </motion.a>
+    );
+  }
+
+  if (scrollTo) {
+    return (
+      <motion.button
+        onClick={() => document.getElementById(scrollTo)?.scrollIntoView({ behavior: 'smooth' })}
+        initial={{ opacity: 0, scaleY: 0 }}
+        animate={{ opacity: 1, scaleY: 1 }}
+        transition={{ delay, duration: 0.3 }}
+        className="relative p-3 bg-black/50 border rounded group hover:border-opacity-100 transition-all duration-300 cursor-pointer hover:scale-105 block w-full text-left"
+        style={{ borderColor: `${color}40` }}
+      >
+        {content}
+      </motion.button>
+    );
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scaleY: 0 }}
+      animate={{ opacity: 1, scaleY: 1 }}
+      transition={{ delay, duration: 0.3 }}
+      className="relative p-3 bg-black/50 border rounded group hover:border-opacity-100 transition-all duration-300"
+      style={{ borderColor: `${color}40` }}
+    >
+      {content}
     </motion.div>
   );
 }

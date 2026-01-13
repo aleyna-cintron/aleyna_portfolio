@@ -95,13 +95,14 @@ export function EducationSection() {
                   <div className="relative w-48 h-56 md:w-56 md:h-64 rounded-lg overflow-hidden border-4 border-yellow-500 shadow-2xl"
                     style={{ boxShadow: '0 0 40px rgba(245, 158, 11, 0.5)' }}
                   >
-                    <div className="w-full h-full bg-gradient-to-br from-yellow-900/20 via-yellow-800/10 to-black flex items-center justify-center">
-                      <div className="text-center">
-                        <Award className="w-16 h-16 text-yellow-400 mx-auto mb-2" />
-                        <p className="text-yellow-400 font-mono text-xs">GRADUATION</p>
-                        <p className="text-yellow-400 font-mono text-xs">2023</p>
-                      </div>
-                    </div>
+                    <Image
+                      src="/graduation.jpg"
+                      alt="Aleyna Cintron Graduation Photo"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 192px, 224px"
+                      priority
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
 

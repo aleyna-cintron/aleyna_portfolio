@@ -6,80 +6,99 @@ import { FolderOpen, ExternalLink, Github, Lock, Unlock } from "lucide-react";
 export function ProjectsSection() {
   const fileRecords = [
     {
-      filename: "E-Commerce Platform",
-      classification: "CRITICAL",
-      classColor: "#ff0000",
-      accessLevel: "LEVEL_5",
-      fileSize: "2.4 GB",
-      description: "High-security commercial application with real-time inventory synchronization, encrypted payment gateway, and multi-tier authentication protocols.",
-      features: [
-        "Real-time inventory sync",
-        "Stripe payment integration",
-        "Admin dashboard with analytics",
-        "JWT-based authentication"
-      ],
-      stack: ["React", "Node.js", "MongoDB", "Stripe"],
-      status: "DEPLOYED",
-      color: "#00ffff",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      filename: "Task Management System",
-      classification: "RESTRICTED",
+      filename: "The Long Autumn Band Website",
+      classification: "IN DEVELOPMENT",
       classColor: "#ff8800",
       accessLevel: "LEVEL_4",
       fileSize: "1.8 GB",
-      description: "Collaborative workspace platform featuring drag-and-drop task orchestration, real-time team synchronization, and advanced notification systems.",
+      description: "Freelance project: Comprehensive band website with Bandsintown API integration for tour dates, Stripe-powered merchandise store, media galleries, and contact functionality. Full-stack solution for band promotion and fan engagement.",
       features: [
-        "Drag-and-drop task boards",
-        "Real-time collaboration",
-        "Push notifications",
-        "Performance analytics"
+        "Bandsintown API for tour dates",
+        "Stripe payment integration",
+        "Band bio & gallery sections",
+        "Contact form & merch store"
       ],
-      stack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
-      status: "DEPLOYED",
+      stack: ["React", "Next.js", "TypeScript", "Stripe", "Bandsintown API"],
+      status: "IN PROGRESS",
       color: "#ff00ff",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/aleyna-cintron/long-autumn-project"
     },
     {
-      filename: "Portfolio Builder",
-      classification: "CONFIDENTIAL",
-      classColor: "#ffaa00",
-      accessLevel: "LEVEL_3",
-      fileSize: "1.5 GB",
-      description: "Visual website construction framework with template engine, custom domain binding, SEO optimization algorithms, and cloud deployment automation.",
+      filename: "Scoundrel: Dungeon Crawler",
+      classification: "RESTRICTED",
+      classColor: "#ff0000",
+      accessLevel: "LEVEL_5",
+      fileSize: "2.1 GB",
+      description: "Contract work for Full Sail University: Educational card game demonstrating core JavaScript fundamentals including game logic, state management, and DOM manipulation. Features conditional card selection and dynamic game state tracking.",
       features: [
-        "Drag-and-drop builder",
-        "Custom domain support",
-        "SEO optimization",
-        "Cloud hosting integration"
+        "Card shuffling algorithm",
+        "Conditional card selection logic",
+        "Health & deck state management",
+        "Hand card tracking system"
       ],
-      stack: ["Angular", "Firebase", "SCSS", "Cloud Functions"],
-      status: "ACTIVE",
-      color: "#00ff00",
+      stack: ["JavaScript", "HTML5", "CSS3"],
+      status: "COMPLETE",
+      color: "#ff0000",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/aleyna-cintron/scoundrel"
     },
     {
-      filename: "Recipe Sharing Platform",
+      filename: "Spotify OAuth MERN App",
+      classification: "DEPLOYED",
+      classColor: "#00ff00",
+      accessLevel: "LEVEL_3",
+      fileSize: "1.9 GB",
+      description: "Academic project: Full-stack MERN application with Spotify OAuth integration. Features JWT authentication, global music search across tracks, artists, and albums with real-time database interactions.",
+      features: [
+        "Spotify OAuth authentication",
+        "JWT authorization tokens",
+        "Global music search engine",
+        "Real-time data synchronization"
+      ],
+      stack: ["MongoDB", "Express", "React", "Node.js"],
+      status: "DEPLOYED",
+      color: "#00ffff",
+      liveUrl: "https://spotify-mern-app.netlify.app/",
+      githubUrl: "https://github.com/aleyna-cintron/spotify-api"
+    },
+    {
+      filename: "Beautify Makeup Searcher",
       classification: "PUBLIC",
       classColor: "#00ff00",
       accessLevel: "LEVEL_2",
       fileSize: "1.2 GB",
-      description: "Community-driven culinary database with user-generated content aggregation, rating algorithms, recommendation engine, and meal planning tools.",
+      description: "Academic project: Beauty product discovery platform leveraging the Makeup API for comprehensive product searches across diverse brands. Features responsive design and extensive product database access.",
       features: [
-        "User content management",
-        "Rating & review system",
-        "AI recommendations",
-        "Meal calendar planner"
+        "Makeup API integration",
+        "Multi-brand product search",
+        "Product filtering & sorting",
+        "Responsive user interface"
       ],
-      stack: ["Vue.js", "Express", "MySQL", "Redis"],
-      status: "ACTIVE",
-      color: "#ffff00",
-      liveUrl: "#",
-      githubUrl: "#"
+      stack: ["JavaScript", "HTML5", "CSS3", "REST API"],
+      status: "DEPLOYED",
+      color: "#ff00ff",
+      liveUrl: "https://beautify-makeup.netlify.app/",
+      githubUrl: "https://github.com/aleyna-cintron/beautify"
+    },
+    {
+      filename: "ShipIt Social Media App",
+      classification: "PUBLIC",
+      classColor: "#00ff00",
+      accessLevel: "LEVEL_1",
+      fileSize: "0.8 GB",
+      description: "Academic project: Fundamental social media application demonstrating core web development principles with user authentication system and basic profile management functionality.",
+      features: [
+        "User login system",
+        "Profile management",
+        "Session handling",
+        "Responsive design"
+      ],
+      stack: ["HTML5", "CSS3", "JavaScript", "Local Storage"],
+      status: "DEPLOYED",
+      color: "#00ff00",
+      liveUrl: "https://aleyna-cintron.github.io/ship-it/profile_page.html",
+      githubUrl: "https://github.com/aleyna-cintron/ship-it"
     }
   ];
 
@@ -273,6 +292,8 @@ function FileCard({ file, delay }: { file: FileRecord; delay: number }) {
           <div className="grid grid-cols-2 gap-3">
             <a
               href={file.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group/btn flex items-center justify-center gap-2 px-4 py-3 rounded border-2 font-mono text-sm font-bold transition-all duration-300 hover:scale-105 relative overflow-hidden"
               style={{
                 borderColor: file.color,
@@ -285,10 +306,12 @@ function FileCard({ file, delay }: { file: FileRecord; delay: number }) {
                 style={{ background: `${file.color}20` }}
               />
               <ExternalLink className="w-4 h-4 relative z-10" />
-              <span className="relative z-10">ACCESS</span>
+              <span className="relative z-10">{file.status === "IN PROGRESS" ? "IN DEVELOPMENT" : "ACCESS"}</span>
             </a>
             <a
               href={file.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded border-2 border-gray-700 bg-gray-900/50 text-gray-400 font-mono text-sm font-bold hover:border-gray-500 hover:text-gray-300 transition-all duration-300 hover:scale-105"
             >
               <Github className="w-4 h-4" />

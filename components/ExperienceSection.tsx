@@ -8,33 +8,33 @@ export function ExperienceSection() {
     {
       id: "LOG_001",
       timestamp: "2025-03-01 09:00:00",
-      title: "JavaScript Tutorial Developer",
+      title: "JavaScript Tutorial Developer (Independent Contractor)",
       organization: "Full Sail University",
       location: "Remote",
       period: "March 2025 – May 2025",
       status: "COMPLETED",
       color: "#00ffff",
       entries: [
-        "Developed interactive JavaScript learning modules for university students",
-        "Built self-directed tutorial system based on Scoundrel card game mechanics",
-        "Collaborated with project leads to meet delivery specifications",
-        "Provided technical support via Excel-based ticketing infrastructure"
+        "Developed JavaScript game-based learning content for Full Sail students, leveraging insights from personal academic experience",
+        "Built a self-directed tutorial project based on Scoundrel, a single-player rogue-like card game, emphasizing clean, beginner-friendly code and core JavaScript fundamentals",
+        "Collaborated with a project lead to meet delivery requirements and align technical standards",
+        "Provided technical support by reviewing student help requests via an Excel-based ticketing system"
       ]
     },
     {
       id: "LOG_002",
       timestamp: "2025-01-15 08:30:00",
-      title: "Healthcare Data Analyst",
+      title: "Healthcare Data Analyst (Home Medical Equipment)",
       organization: "Conlin's Pharmacy",
       location: "Methuen, MA",
       period: "January 2025 – March 2025",
       status: "COMPLETED",
       color: "#ff00ff",
       entries: [
-        "Analyzed patient data and executed insurance verification protocols",
-        "Optimized insurance workflow systems, improving billing accuracy",
-        "Coordinated with physician offices to resolve prescription discrepancies",
-        "Enhanced order fulfillment efficiency through process optimization"
+        "Analyzed and managed patient data, insurance checks, and HME prescription compliance",
+        "Optimized insurance verification workflows, improving billing accuracy",
+        "Coordinated with physicians' offices to resolve prescription discrepancies",
+        "Boosted order fulfillment efficiency by streamlining processing workflows"
       ]
     },
     {
@@ -47,10 +47,9 @@ export function ExperienceSection() {
       status: "COMPLETED",
       color: "#00ff00",
       entries: [
-        "Managed online inventory database with eBay integration",
-        "Maintained structured digital catalog of merchandise",
-        "Processed e-commerce transactions with attention to detail",
-        "Handled product categorization, pricing algorithms, and sales tracking"
+        "Managed online inventory by listing and updating product descriptions on eBay",
+        "Maintained a structured digital record of merchandise, including categorization, pricing, and sales tracking",
+        "Processed online orders, verifying product details, packaging, and shipment logistics"
       ]
     },
     {
@@ -63,10 +62,10 @@ export function ExperienceSection() {
       status: "COMPLETED",
       color: "#ffff00",
       entries: [
-        "Developed full-stack features using Angular, TypeScript, Flask, PostgreSQL",
-        "Enhanced UI/UX with responsive design implementations",
-        "Optimized software infrastructure for performance improvements",
-        "Debugged and resolved critical system issues, enhancing stability"
+        "Developed full-stack features using Angular, TypeScript, Flask, and PostgreSQL",
+        "Enhanced UI/UX with responsive design elements",
+        "Optimized software infrastructure for better efficiency and performance",
+        "Diagnosed and resolved bugs, enhancing system stability"
       ]
     }
   ];
