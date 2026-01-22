@@ -217,7 +217,7 @@ export function SkillsSection() {
                       <img
                         src={skill.icon}
                         alt={skill.name}
-                        className="w-12 h-12 group-hover:scale-110 transition-transform duration-300"
+                        className="w-12 h-12 group-hover:scale-110"
                         style={{ filter: skill.needsInvert ? 'invert(1)' : 'none' }}
                       />
                       <motion.div
@@ -261,8 +261,19 @@ export function SkillsSection() {
                       return (
                         <>
                           <span className="text-white">{parts[0]}</span>
+                          <span 
+                            style={{ 
+                              background: `linear-gradient(90deg, #ffffff 0%, ${category.color} 100%)`,
+                              WebkitBackgroundClip: 'text',
+                              WebkitTextFillColor: 'transparent',
+                              backgroundClip: 'text',
+                              fontWeight: 'bold'
+                            }}
+                          >
+                            &nbsp;&
+                          </span>
                           <span style={{ color: category.color }}>
-                            &nbsp;{parts.length > 1 ? `& ${parts[1]}` : ''}
+                            &nbsp;{parts.length > 1 ? parts[1] : ''}
                           </span>
                         </>
                       );
@@ -292,7 +303,7 @@ export function SkillsSection() {
 
                         <div className="relative flex flex-col items-center gap-2.5 justify-center min-h-[80px]">
                           <skill.Icon
-                            className="text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-300"
+                            className="text-4xl sm:text-5xl group-hover:scale-110"
                             style={{ color: skill.color }}
                           />
                           <p className="font-mono text-xs sm:text-sm text-gray-300 group-hover:text-white transition-colors text-center leading-tight">
