@@ -28,7 +28,7 @@ export function ProjectsSection() {
     },
     {
       filename: "Scoundrel: Dungeon Crawler",
-      classification: "RESTRICTED",
+      classification: "DEPLOYED",
       classColor: "#f472b6",
       accessLevel: "LEVEL_5",
       fileSize: "2.1 GB",
@@ -42,7 +42,7 @@ export function ProjectsSection() {
       stack: ["JavaScript", "HTML5", "CSS3"],
       status: "COMPLETE",
       color: "#f472b6",
-      liveUrl: "#",
+      liveUrl: "https://aleyna-cintron.github.io/scoundrel/",
       githubUrl: "https://github.com/aleyna-cintron/scoundrel"
     },
     {
