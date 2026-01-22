@@ -1,14 +1,16 @@
 'use client';
 
-import { motion } from "framer-motion";
+'use client';
+
+import { motion } from "motion/react";
 import { FolderOpen, ExternalLink, Github, Lock, Unlock } from "lucide-react";
 
 export function ProjectsSection() {
   const fileRecords = [
     {
       filename: "The Long Autumn Band Website",
-      classification: "IN DEVELOPMENT",
-      classColor: "#ff8800",
+      classification: "RESTRICTED",
+      classColor: "#a78bfa",
       accessLevel: "LEVEL_4",
       fileSize: "1.8 GB",
       description: "Freelance project: Comprehensive band website with Bandsintown API integration for tour dates, Stripe-powered merchandise store, media galleries, and contact functionality. Full-stack solution for band promotion and fan engagement.",
@@ -19,15 +21,15 @@ export function ProjectsSection() {
         "Contact form & merch store"
       ],
       stack: ["React", "Next.js", "TypeScript", "Stripe", "Bandsintown API"],
-      status: "IN PROGRESS",
-      color: "#ff00ff",
+      status: "IN DEVELOPMENT",
+      color: "#a78bfa",
       liveUrl: "#",
       githubUrl: "https://github.com/aleyna-cintron/long-autumn-project"
     },
     {
       filename: "Scoundrel: Dungeon Crawler",
       classification: "RESTRICTED",
-      classColor: "#ff0000",
+      classColor: "#f472b6",
       accessLevel: "LEVEL_5",
       fileSize: "2.1 GB",
       description: "Contract work for Full Sail University: Educational card game demonstrating core JavaScript fundamentals including game logic, state management, and DOM manipulation. Features conditional card selection and dynamic game state tracking.",
@@ -39,14 +41,14 @@ export function ProjectsSection() {
       ],
       stack: ["JavaScript", "HTML5", "CSS3"],
       status: "COMPLETE",
-      color: "#ff0000",
+      color: "#f472b6",
       liveUrl: "#",
       githubUrl: "https://github.com/aleyna-cintron/scoundrel"
     },
     {
       filename: "Spotify OAuth MERN App",
       classification: "DEPLOYED",
-      classColor: "#00ff00",
+      classColor: "#a78bfa",
       accessLevel: "LEVEL_3",
       fileSize: "1.9 GB",
       description: "Academic project: Full-stack MERN application with Spotify OAuth integration. Features JWT authentication, global music search across tracks, artists, and albums with real-time database interactions.",
@@ -58,14 +60,14 @@ export function ProjectsSection() {
       ],
       stack: ["MongoDB", "Express", "React", "Node.js"],
       status: "DEPLOYED",
-      color: "#00ffff",
+      color: "#a78bfa",
       liveUrl: "https://spotify-mern-app.netlify.app/",
       githubUrl: "https://github.com/aleyna-cintron/spotify-api"
     },
     {
       filename: "Beautify Makeup Searcher",
       classification: "PUBLIC",
-      classColor: "#00ff00",
+      classColor: "#f472b6",
       accessLevel: "LEVEL_2",
       fileSize: "1.2 GB",
       description: "Academic project: Beauty product discovery platform leveraging the Makeup API for comprehensive product searches across diverse brands. Features responsive design and extensive product database access.",
@@ -77,14 +79,14 @@ export function ProjectsSection() {
       ],
       stack: ["JavaScript", "HTML5", "CSS3", "REST API"],
       status: "DEPLOYED",
-      color: "#ff00ff",
+      color: "#f472b6",
       liveUrl: "https://beautify-makeup.netlify.app/",
       githubUrl: "https://github.com/aleyna-cintron/beautify"
     },
     {
       filename: "ShipIt Social Media App",
       classification: "PUBLIC",
-      classColor: "#00ff00",
+      classColor: "#a78bfa",
       accessLevel: "LEVEL_1",
       fileSize: "0.8 GB",
       description: "Academic project: Fundamental social media application demonstrating core web development principles with user authentication system and basic profile management functionality.",
@@ -96,7 +98,7 @@ export function ProjectsSection() {
       ],
       stack: ["HTML5", "CSS3", "JavaScript", "Local Storage"],
       status: "DEPLOYED",
-      color: "#00ff00",
+      color: "#a78bfa",
       liveUrl: "https://aleyna-cintron.github.io/ship-it/profile_page.html",
       githubUrl: "https://github.com/aleyna-cintron/ship-it"
     }
@@ -104,16 +106,29 @@ export function ProjectsSection() {
 
   return (
     <section id="projects" className="py-20 px-6 relative overflow-hidden bg-black">
-      {/* Grid background */}
-      <div className="absolute inset-0 pointer-events-none opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(#00ffff 1px, transparent 1px),
-            linear-gradient(90deg, #00ffff 1px, transparent 1px)
-          `,
-          backgroundSize: '30px 30px'
-        }} />
-      </div>
+      {/* Floating particles */}
+      {[...Array(12)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, -25, 0],
+            opacity: [0, 0.4, 0],
+            scale: [0, 1, 0],
+          }}
+          transition={{
+            duration: 4 + Math.random() * 2,
+            repeat: Infinity,
+            delay: Math.random() * 4,
+          }}
+        >
+          <div className="w-1.5 h-1.5 bg-purple-400/40 rounded-full" />
+        </motion.div>
+      ))}
 
       <div className="max-w-7xl mx-auto relative">
         <motion.div
@@ -124,12 +139,12 @@ export function ProjectsSection() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <FolderOpen className="w-6 h-6 text-cyan-400" />
-            <h2 className="text-4xl md:text-5xl font-mono font-bold bg-gradient-to-r from-cyan-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+            <FolderOpen className="w-6 h-6 text-pink-500" />
+            <h2 className="text-4xl md:text-5xl font-mono font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-pink-500 bg-clip-text text-transparent">
               FILE_SYSTEM
             </h2>
           </div>
-          <p className="text-gray-400 font-mono text-sm">// Accessing secure project archives...</p>
+          <p className="text-gray-500 font-mono text-sm">// Accessing secure project archives...</p>
         </motion.div>
 
         {/* File Grid */}
@@ -159,6 +174,27 @@ interface FileRecord {
 }
 
 function FileCard({ file, delay }: { file: FileRecord; delay: number }) {
+  // Convert to pastels matching terminal theme
+  const pastelColor = file.color === '#a78bfa' ? '#c4b5fd' :
+                      file.color === '#f472b6' ? '#f9a8d4' :
+                      file.color === '#fb7185' ? '#fda4af' : '#a7f3d0';
+
+  const handleAccessClick = () => {
+    if (file.liveUrl === "#") {
+      alert("🚀 This project is in development! Check back soon.");
+    } else {
+      window.open(file.liveUrl, "_blank");
+    }
+  };
+
+  const handleSourceClick = () => {
+    if (file.githubUrl === "#") {
+      alert("🚀 This project is in development! Check back soon.");
+    } else {
+      window.open(file.githubUrl, "_blank");
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -169,10 +205,9 @@ function FileCard({ file, delay }: { file: FileRecord; delay: number }) {
     >
       {/* File Card */}
       <div
-        className="relative rounded-lg overflow-hidden bg-black/90 border-2 transition-all duration-300 hover:scale-[1.02] backdrop-blur-xl"
+        className="relative rounded-lg overflow-hidden bg-black/90 border-2 transition-all duration-300 hover:scale-[1.01] backdrop-blur-xl shadow-lg"
         style={{
-          borderColor: `${file.color}50`,
-          boxShadow: `0 0 30px ${file.color}20`
+          borderColor: `${pastelColor}`,
         }}
       >
         {/* Scan line */}
@@ -220,7 +255,7 @@ function FileCard({ file, delay }: { file: FileRecord; delay: number }) {
           <div className="mb-6">
             <div className="flex items-start justify-between mb-3">
               <div className="flex-1">
-                <h3 className="text-xl font-mono font-bold mb-2" style={{ color: file.color }}>
+                <h3 className="text-xl font-mono font-bold mb-2 text-white">
                   {file.filename}
                 </h3>
                 <div className="flex flex-wrap gap-3 text-xs font-mono text-gray-500">
@@ -290,11 +325,9 @@ function FileCard({ file, delay }: { file: FileRecord; delay: number }) {
 
           {/* Actions */}
           <div className="grid grid-cols-2 gap-3">
-            <a
-              href={file.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/btn flex items-center justify-center gap-2 px-4 py-3 rounded border-2 font-mono text-sm font-bold transition-all duration-300 hover:scale-105 relative overflow-hidden"
+            <button
+              onClick={handleAccessClick}
+              className="group/btn flex items-center justify-center gap-2 px-4 py-3 rounded border-2 font-mono text-sm font-bold transition-all duration-300 hover:scale-105 relative overflow-hidden cursor-pointer"
               style={{
                 borderColor: file.color,
                 background: `${file.color}10`,
@@ -306,17 +339,15 @@ function FileCard({ file, delay }: { file: FileRecord; delay: number }) {
                 style={{ background: `${file.color}20` }}
               />
               <ExternalLink className="w-4 h-4 relative z-10" />
-              <span className="relative z-10">{file.status === "IN PROGRESS" ? "IN DEVELOPMENT" : "ACCESS"}</span>
-            </a>
-            <a
-              href={file.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded border-2 border-gray-700 bg-gray-900/50 text-gray-400 font-mono text-sm font-bold hover:border-gray-500 hover:text-gray-300 transition-all duration-300 hover:scale-105"
+              <span className="relative z-10">ACCESS</span>
+            </button>
+            <button
+              onClick={handleSourceClick}
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded border-2 border-gray-700 bg-gray-900/50 text-gray-400 font-mono text-sm font-bold hover:border-gray-500 hover:text-gray-300 transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Github className="w-4 h-4" />
               <span>SOURCE</span>
-            </a>
+            </button>
           </div>
 
           {/* Corner accents */}

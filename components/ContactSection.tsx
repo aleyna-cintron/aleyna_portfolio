@@ -1,4 +1,8 @@
-import { motion } from "framer-motion";
+'use client';
+
+'use client';
+
+import { motion } from "motion/react";
 import { Mail, Linkedin, Github, Wifi, Send, Globe } from "lucide-react";
 
 export function ContactSection() {

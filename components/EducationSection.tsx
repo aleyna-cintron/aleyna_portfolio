@@ -1,6 +1,8 @@
 'use client';
 
-import { motion } from "framer-motion";
+'use client';
+
+import { motion } from "motion/react";
 import { Award, Star, Shield, Lock } from "lucide-react";
 import Image from "next/image";
 
