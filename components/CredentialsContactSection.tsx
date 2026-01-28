@@ -56,7 +56,7 @@ export function CredentialsContactSection() {
             transition={{ duration: 0.8 }}
             className="flex flex-col"
           >
-            <div className="relative p-8 bg-black/90 border-4 rounded-lg overflow-hidden backdrop-blur-xl shadow-xl flex-1"
+            <div className="relative p-4 sm:p-8 bg-black/90 border-2 sm:border-4 rounded-lg overflow-hidden backdrop-blur-xl shadow-xl flex-1"
               style={{ borderColor: '#a78bfa' }}
             >
               {/* Animated scan lines */}
@@ -195,8 +195,8 @@ export function CredentialsContactSection() {
             transition={{ duration: 0.8 }}
             className="flex flex-col"
           >
-            <div className="relative p-8 bg-black/90 border-4 rounded-lg overflow-hidden backdrop-blur-xl shadow-xl flex-1"
-              style={{ 
+            <div className="relative p-4 sm:p-8 bg-black/90 border-2 sm:border-4 rounded-lg overflow-hidden backdrop-blur-xl shadow-xl flex-1"
+              style={{
                 borderColor: '#f472b6',
                 boxShadow: '0 0 20px rgba(244, 114, 182, 0.1)'
               }}

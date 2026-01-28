@@ -93,7 +93,7 @@ export function HeroSection() {
                   <ChevronRight className="w-4 h-4 text-purple-400" />
                   <span className="text-gray-500">NAME:</span>
                 </div>
-                <h1 className="text-5xl md:text-7xl mb-4 relative">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl mb-4 relative">
                   <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-pink-400 bg-clip-text text-transparent font-bold">
                     {displayText}
                     <motion.span
