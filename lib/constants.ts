@@ -49,7 +49,7 @@ export const FILE_RECORDS: FileRecord[] = [
     stack: ["React", "Next.js", "TypeScript", "Stripe", "Bandsintown API"],
     status: "IN DEVELOPMENT",
     color: "#a78bfa",
-    liveUrl: "#",
+    liveUrl: "https://long-autumn-9p92hfvx3-jam-templetons-projects.vercel.app",
     githubUrl: "https://github.com/aleyna-cintron/long-autumn-project"
   },
   {
