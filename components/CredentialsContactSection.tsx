@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Award, Star, Shield, Lock, Mail, Linkedin, Github, Send } from "lucide-react";
+import Image from "next/image";
 
 export function CredentialsContactSection() {
   return (
@@ -88,10 +89,13 @@ export function CredentialsContactSection() {
                     {/* Photo Container */}
                     <div className="relative w-40 h-48 rounded-lg overflow-hidden border-2 border-purple-400 shadow-2xl"
                     >
-                      <img 
-                        src="/graduation.jpg" 
-                        alt="Aleyna Cintron Graduation Photo"
+                      <Image
+                        src="/graduation.jpg"
+                        alt="Aleyna Cintron — Full Stack Developer in Boston and New Hampshire"
+                        width={160}
+                        height={192}
                         className="w-full h-full object-cover"
+                        priority
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
@@ -335,19 +339,21 @@ export function CredentialsContactSection() {
         </div>
 
         {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1 }}
-          className="text-center mt-12"
-        >
-          <div className="inline-block p-6 bg-black/90 border-2 border-purple-500/20 rounded-lg backdrop-blur-xl">
-            <p className="text-gray-500 font-mono text-sm">
-              © 2026 ALEYNA_CINTRON // Powered by React + Tailwind + Terminal Energy
-            </p>
-          </div>
-        </motion.div>
+        <footer className="mt-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1 }}
+            className="text-center"
+          >
+            <div className="inline-block p-6 bg-black/90 border-2 border-purple-500/20 rounded-lg backdrop-blur-xl">
+              <p className="text-gray-500 font-mono text-sm">
+                © 2026 Aleyna Cintron — Full Stack Developer in Boston, MA &amp; Manchester, NH
+              </p>
+            </div>
+          </motion.div>
+        </footer>
       </div>
     </section>
   );

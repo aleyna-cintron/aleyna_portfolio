@@ -94,7 +94,8 @@ export function HeroSection() {
                   <span className="text-gray-500">NAME:</span>
                 </div>
                 <h1 className="text-3xl sm:text-5xl md:text-7xl mb-4 relative">
-                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-pink-400 bg-clip-text text-transparent font-bold">
+                  <span className="sr-only">Aleyna Cintron — Full Stack Developer for Hire in Boston, MA &amp; Manchester, NH</span>
+                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-pink-400 bg-clip-text text-transparent font-bold" aria-hidden="true">
                     {displayText}
                     <motion.span
                       animate={{ opacity: [1, 0, 1] }}
@@ -119,10 +120,10 @@ export function HeroSection() {
                   <span className="text-gray-500">ROLE:</span>
                 </div>
                 <div className="pl-6">
-                  <p className="text-2xl md:text-3xl text-purple-500 font-bold mb-2 flex items-center gap-2">
+                  <h2 className="text-2xl md:text-3xl text-purple-500 font-bold mb-2 flex items-center gap-2">
                     <Code2 className="w-6 h-6" />
                     &lt; Full Stack Software Engineer /&gt;
-                  </p>
+                  </h2>
                   <p className="text-gray-400 leading-relaxed">
                     Experienced engineer specializing in React.js, Node.js, and cloud technologies.
                     Expert in building scalable web applications, implementing modern development practices, and delivering high-quality solutions.

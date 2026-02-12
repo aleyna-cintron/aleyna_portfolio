@@ -44,17 +44,19 @@ export default function App() {
         itemScope
         itemType="https://schema.org/Person"
       >
-        <h2>About Aleyna Cintron — Full Stack Software Engineer</h2>
+        <h2>Aleyna Cintron — Full Stack Developer for Hire in Boston, MA &amp; Manchester, NH</h2>
 
         <article>
           <h3>Professional Summary</h3>
           <p>
-            Aleyna Cintron is a Full Stack Software Engineer based in the New
-            Hampshire and Greater Boston, Massachusetts area. She specializes in
-            building modern web applications using React, Next.js, Node.js,
-            TypeScript, and the MERN stack (MongoDB, Express, React, Node.js).
-            She holds a Bachelor of Science in Web Development from Full Sail
-            University where she graduated as Salutatorian with a 3.98 GPA.
+            Aleyna Cintron is a Full Stack Software Engineer available for hire
+            in the Boston, Massachusetts and Manchester, New Hampshire areas.
+            She specializes in building modern web applications using React,
+            Next.js, Node.js, TypeScript, and the MERN stack (MongoDB, Express,
+            React, Node.js). She holds a Bachelor of Science in Web Development
+            from Full Sail University where she graduated as Salutatorian with
+            a 3.98 GPA. She is ready to work on-site in Boston, Cambridge,
+            Manchester, Nashua, or remotely anywhere in the United States.
           </p>
         </article>
 
@@ -140,12 +142,16 @@ export default function App() {
         </article>
 
         <article>
-          <h3>Location and Availability</h3>
+          <h3>Full Stack Developer for Hire — Location and Availability</h3>
           <p>
-            Aleyna Cintron is located in the New Hampshire and Greater Boston,
-            Massachusetts area. She is currently open to full-time, freelance,
-            and contract opportunities as a Full Stack Software Engineer. She is
-            available for both remote and on-site positions in New England.
+            Aleyna Cintron is a Full Stack Developer for hire located in the
+            Manchester, New Hampshire and Greater Boston, Massachusetts area.
+            She is currently available for full-time, freelance, and contract
+            opportunities. She can work on-site in Boston, Cambridge, Somerville,
+            Manchester, Nashua, Concord, and surrounding cities in Massachusetts
+            and New Hampshire, as well as fully remote positions anywhere in the
+            United States. If you are looking to hire a Full Stack Developer in
+            the Boston area or Manchester, NH area, Aleyna is ready to start.
           </p>
         </article>
 
@@ -168,13 +174,16 @@ export default function App() {
             </dd>
             <dt>Where is Aleyna Cintron located?</dt>
             <dd>
-              Aleyna is based in the New Hampshire / Greater Boston,
-              Massachusetts area and is available for remote and local work.
+              Aleyna is based in the Manchester, New Hampshire and Greater
+              Boston, Massachusetts area. She is available for hire for on-site
+              work in Boston, Cambridge, Manchester, Nashua, and surrounding
+              cities, as well as remote positions.
             </dd>
             <dt>Is Aleyna Cintron available for hire?</dt>
             <dd>
-              Yes. Aleyna is open to full-time, freelance, and contract
-              opportunities. Contact her at aleynatcintron@gmail.com.
+              Yes. Aleyna is a Full Stack Developer ready for hire. She accepts
+              full-time, freelance, and contract opportunities in the Boston, MA
+              and Manchester, NH areas. Contact her at aleynatcintron@gmail.com.
             </dd>
             <dt>Does Aleyna have experience with Next.js?</dt>
             <dd>

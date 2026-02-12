@@ -15,7 +15,7 @@ export const personJsonLd = {
   image: `${SITE_URL}/graduation.jpg`,
   jobTitle: "Full Stack Software Engineer",
   description:
-    "Full Stack Software Engineer specializing in React, Next.js, Node.js, and cloud technologies. Based in the Boston/New Hampshire area with a BS in Web Development from Full Sail University.",
+    "Full Stack Software Engineer available for hire in Boston, Massachusetts and Manchester, New Hampshire. Specializing in React, Next.js, Node.js, and cloud technologies. BS in Web Development from Full Sail University.",
   email: "mailto:aleynatcintron@gmail.com",
   knowsAbout: [
     "Full Stack Development",
@@ -63,11 +63,20 @@ export const personJsonLd = {
       name: "Full Sail University",
     },
   },
-  address: {
-    "@type": "PostalAddress",
-    addressRegion: "NH",
-    addressCountry: "US",
-  },
+  address: [
+    {
+      "@type": "PostalAddress",
+      addressLocality: "Manchester",
+      addressRegion: "NH",
+      addressCountry: "US",
+    },
+    {
+      "@type": "PostalAddress",
+      addressLocality: "Boston",
+      addressRegion: "MA",
+      addressCountry: "US",
+    },
+  ],
   sameAs: [
     "https://www.linkedin.com/in/aleynacintron/",
     "https://github.com/aleyna-cintron",
@@ -86,7 +95,7 @@ export const websiteJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   description:
-    "Portfolio of Aleyna Cintron, a Full Stack Software Engineer specializing in React, Next.js, Node.js, and the MERN stack. Based in New Hampshire / Boston area.",
+    "Portfolio of Aleyna Cintron, a Full Stack Developer for hire in Boston, MA and Manchester, NH. Specializing in React, Next.js, Node.js, and the MERN stack.",
   publisher: { "@id": `${SITE_URL}/#person` },
   inLanguage: "en-US",
 };
@@ -99,7 +108,7 @@ export const webPageJsonLd = {
   url: SITE_URL,
   name: SITE_NAME,
   description:
-    "Explore the portfolio of Aleyna Cintron — Full Stack Developer in New Hampshire and Massachusetts. Specializing in React, Next.js, Node.js, and modern web technologies.",
+    "Hire Aleyna Cintron — Full Stack Developer available in Boston, MA and Manchester, NH. Specializing in React, Next.js, Node.js, and modern web technologies.",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   about: { "@id": `${SITE_URL}/#person` },
   inLanguage: "en-US",
@@ -150,7 +159,7 @@ export const faqJsonLd = {
       name: "Where is Aleyna Cintron located?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Aleyna Cintron is based in the New Hampshire / Greater Boston area in Massachusetts. She is available for both remote and local opportunities in the New England region.",
+        text: "Aleyna Cintron is based in the Manchester, New Hampshire and Greater Boston, Massachusetts area. She is available for hire for both remote and on-site opportunities in the New England region, including Boston, Cambridge, Manchester, Nashua, and surrounding areas.",
       },
     },
     {
@@ -166,7 +175,7 @@ export const faqJsonLd = {
       name: "Is Aleyna Cintron available for hire?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Aleyna Cintron is currently open to full-time, freelance, and contract opportunities as a Full Stack Software Engineer. Contact her at aleynatcintron@gmail.com or connect on LinkedIn.",
+        text: "Yes, Aleyna Cintron is currently available for hire as a Full Stack Software Engineer. She accepts full-time, freelance, and contract opportunities in the Boston, MA and Manchester, NH areas, as well as remote positions. Contact her at aleynatcintron@gmail.com or connect on LinkedIn.",
       },
     },
     {
@@ -196,32 +205,8 @@ export const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 1,
-      name: "Home",
+      name: "Aleyna Cintron — Full Stack Developer for Hire",
       item: SITE_URL,
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Skills",
-      item: `${SITE_URL}/#skills`,
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Projects",
-      item: `${SITE_URL}/#projects`,
-    },
-    {
-      "@type": "ListItem",
-      position: 4,
-      name: "Experience",
-      item: `${SITE_URL}/#experience`,
-    },
-    {
-      "@type": "ListItem",
-      position: 5,
-      name: "Contact",
-      item: `${SITE_URL}/#contact`,
     },
   ],
 };
