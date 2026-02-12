@@ -17,7 +17,7 @@ export const FILE_RECORDS: FileRecord[] = [
   {
     filename: "The Long Autumn Band Website",
     classification: "RESTRICTED",
-    classColor: "#a78bfa",
+    classColor: "#f472b6",
     accessLevel: "LEVEL_4",
     fileSize: "1.8 GB",
     description: "Freelance project: Comprehensive band website with Bandsintown API integration for tour dates, Stripe-powered merchandise store, media galleries, and contact functionality. Full-stack solution for band promotion and fan engagement.",
@@ -29,14 +29,14 @@ export const FILE_RECORDS: FileRecord[] = [
     ],
     stack: ["React", "Next.js", "TypeScript", "Stripe", "Bandsintown API"],
     status: "DEPLOYED",
-    color: "#a78bfa",
+    color: "#f472b6",
     liveUrl: "https://long-autumn-9p92hfvx3-jam-templetons-projects.vercel.app",
     githubUrl: "https://github.com/aleyna-cintron/long-autumn-project"
   },
   {
     filename: "Opulence Tools E-Commerce",
     classification: "RESTRICTED",
-    classColor: "#f472b6",
+    classColor: "#a78bfa",
     accessLevel: "LEVEL_5",
     fileSize: "2.4 GB",
     description: "Freelance project: Modern e-commerce platform for luxury jewelry-making tools. Features secure authentication with NextAuth.js, JWT sessions with role-based access (admin/user), Zod validation, and product catalog with filtering.",
@@ -48,7 +48,7 @@ export const FILE_RECORDS: FileRecord[] = [
     ],
     stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "NextAuth.js"],
     status: "IN DEVELOPMENT",
-    color: "#f472b6",
+    color: "#a78bfa",
     liveUrl: "https://opulence-tools-nz3acixdx-oneida-toress-projects.vercel.app/",
     githubUrl: "https://github.com/aleyna-cintron/opulence-tools"
   },
