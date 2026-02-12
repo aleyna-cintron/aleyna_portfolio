@@ -15,6 +15,25 @@ export interface FileRecord {
 
 export const FILE_RECORDS: FileRecord[] = [
   {
+    filename: "The Long Autumn Band Website",
+    classification: "RESTRICTED",
+    classColor: "#a78bfa",
+    accessLevel: "LEVEL_4",
+    fileSize: "1.8 GB",
+    description: "Freelance project: Comprehensive band website with Bandsintown API integration for tour dates, Stripe-powered merchandise store, media galleries, and contact functionality. Full-stack solution for band promotion and fan engagement.",
+    features: [
+      "Bandsintown API for tour dates",
+      "Stripe payment integration",
+      "Band bio & gallery sections",
+      "Contact form & merch store"
+    ],
+    stack: ["React", "Next.js", "TypeScript", "Stripe", "Bandsintown API"],
+    status: "DEPLOYED",
+    color: "#a78bfa",
+    liveUrl: "https://long-autumn-9p92hfvx3-jam-templetons-projects.vercel.app",
+    githubUrl: "https://github.com/aleyna-cintron/long-autumn-project"
+  },
+  {
     filename: "Opulence Tools E-Commerce",
     classification: "RESTRICTED",
     classColor: "#f472b6",
@@ -32,25 +51,6 @@ export const FILE_RECORDS: FileRecord[] = [
     color: "#f472b6",
     liveUrl: "https://opulence-tools-nz3acixdx-oneida-toress-projects.vercel.app/",
     githubUrl: "https://github.com/aleyna-cintron/opulence-tools"
-  },
-  {
-    filename: "The Long Autumn Band Website",
-    classification: "RESTRICTED",
-    classColor: "#a78bfa",
-    accessLevel: "LEVEL_4",
-    fileSize: "1.8 GB",
-    description: "Freelance project: Comprehensive band website with Bandsintown API integration for tour dates, Stripe-powered merchandise store, media galleries, and contact functionality. Full-stack solution for band promotion and fan engagement.",
-    features: [
-      "Bandsintown API for tour dates",
-      "Stripe payment integration",
-      "Band bio & gallery sections",
-      "Contact form & merch store"
-    ],
-    stack: ["React", "Next.js", "TypeScript", "Stripe", "Bandsintown API"],
-    status: "IN DEVELOPMENT",
-    color: "#a78bfa",
-    liveUrl: "https://long-autumn-9p92hfvx3-jam-templetons-projects.vercel.app",
-    githubUrl: "https://github.com/aleyna-cintron/long-autumn-project"
   },
   {
     filename: "Scoundrel: Dungeon Crawler",
